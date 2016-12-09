@@ -1,0 +1,2 @@
+# NepBLD
+NepBLD aka Nepal Blood Database is just a simple web application created using django framework. Its a project that simply holds the Donor data and others user can search for Donor. Donor can provide their data where other cann search for them. Users can also search Donors based on the location according cities. This project too includes the contact number of all blood bank across the county.
