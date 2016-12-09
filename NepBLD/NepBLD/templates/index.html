@@ -6,5 +6,13 @@
 <body>
 <h1>Welcome to Nep BDL</h1>
 <h2>Are you a Donor? <a href="{% url 'register' %}">Register Now</a> and Help others to find you when the need you</h2>
+<h3>Search For Blood Donors</h3>
+<form method='get' action="{% url 'search' %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="name" value="Search">
+</form>
+
+
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+</head>
+<body>
+<h2>Search For Donors</h2>
+<form method='get' action="{% url 'search' %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="name" value="Search">
+</form>
+
+Your Search for Blood Group : '{{ bloodgroup }}' and City: '{{ city }}' is : 
+
+<table border="1px">
+	<tr>
+		<th>First Name</th>
+		<th>last Name</th>
+		<th>Gender</th>
+		<th>Blood Group</th>
+		<th>City</th>
+		<th>Address</th>
+		<th>Email</th>
+		<th>Contact Number</th>
+	</tr>
+{% for i in result %}
+	<tr>
+		<td> {{ i.first_name }}</td>
+		<td> {{ i.last_name }}</td>
+		<td> {{ i.gender }}</td>
+		<td> {{ i.bloodgroup }}</td>
+		<td> {{ i.city }}</td>
+		<td> {{ i.address }}</td>
+		<td> {{ i.email }}</td>
+		<td> {{ i.contact_number }}</td>
+	</tr>
+{% endfor %}
+</table>
+</body>
+</html>
