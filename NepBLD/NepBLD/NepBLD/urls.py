@@ -19,5 +19,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('Index.urls')),
+    url(r'^', include('Index.urls')),		#url for Index App is created
 ]
