@@ -11,9 +11,6 @@ class IndexView(View):
 
 	def get(self,request):
 		form = self.form_class()
-		# bloodgroup = self.request.GET.get('bloodgroup')
-		# city = self.request.GET.get('city')
-		# result = RegisterClass.objects.filter(bloodgroup=bloodgroup,city=city)
 		return render(request, self.template_name,{'form':form})
 
 class RegisterView(View):
