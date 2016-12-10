@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from Index.forms import RegisterClassForm,SearchForm
 from Index.models import RegisterClass
@@ -46,3 +46,9 @@ class SearchView(View):
 		result = RegisterClass.objects.filter(bloodgroup=bloodgroup,city=city)
 		return render(request, self.template_name,{'form':form,'result':result,'bloodgroup':bloodgroup,'city':city})
 
+class ProfileView(View):
+	template_name = 'profile.html'
+
+	def get(self,request,name_slug):
+		profile = get_object_or_404(RegisterClass,name_slug=name_slug)
+		return render(request, self.template_name, {'profile':profile})
