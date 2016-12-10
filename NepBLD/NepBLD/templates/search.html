@@ -15,8 +15,8 @@ Your Search for Blood Group : '{{ bloodgroup }}' and City: '{{ city }}' is :
 
 <table border="1px">
 	<tr>
-		<th>First Name</th>
-		<th>last Name</th>
+		<th>Donor Name</th>
+		
 		<th>Gender</th>
 		<th>Blood Group</th>
 		<th>City</th>
@@ -26,8 +26,7 @@ Your Search for Blood Group : '{{ bloodgroup }}' and City: '{{ city }}' is :
 	</tr>
 {% for i in result %}
 	<tr>
-		<td> {{ i.first_name }}</td>
-		<td> {{ i.last_name }}</td>
+		<td><a href="/profile/{{ i.name_slug }} "> {{ i.first_name }} {{ i.middle_name }} {{ i.last_name }}</a></td>
 		<td> {{ i.gender }}</td>
 		<td> {{ i.bloodgroup }}</td>
 		<td> {{ i.city }}</td>
